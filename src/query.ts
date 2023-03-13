@@ -54,10 +54,6 @@ export default function query(
     if (spaceIndex > keyIndex) return
   }
 
-  // Activation key must occur at word boundary.
-  const pre = text[keyIndex - 1]
-  if (pre && !boundary.test(pre)) return
-
   // Extract matched keyword.
   const queryString = text.substring(keyIndex + key.length, cursor)
   return {
